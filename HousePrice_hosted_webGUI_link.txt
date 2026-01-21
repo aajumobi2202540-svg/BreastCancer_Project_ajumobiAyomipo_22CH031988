@@ -1,0 +1,6 @@
+Name: Ajumobi Ayomipo Aderoju
+Matric Number: 22CH031988
+Machine Learning Algorithm Used: Linear Regression
+Model Persistence Method: Pickle
+Live URL of the hosted application: https://houseprice-project-ajumobiayomipo.onrender.com/
+GitHub Repository: https://github.com/aajumobi2202540-svg/HousePrice_Project_ajumobiAyomipo_22CH031988

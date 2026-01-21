@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="box">
+    <h2>House Price Prediction</h2>
+
+    <form action="/predict" method="post">
+
+        <!-- Overall Quality -->
+        <label>House Quality</label>
+        <select name="OverallQual" required>
+            <option value="1">Very Poor</option>
+            <option value="3">Poor</option>
+            <option value="5" selected>Average</option>
+            <option value="7">Good</option>
+            <option value="8">Very Good</option>
+            <option value="9">Excellent</option>
+        </select>
+
+        <!-- Living Area -->
+        <label>Living Area (sq ft)</label>
+        <input type="number" name="GrLivArea" min="0" required>
+
+        <!-- Basement Area -->
+        <label>Basement Area (sq ft)</label>
+        <input type="number" name="TotalBsmtSF" min="0" required>
+
+        <!-- Garage Cars -->
+        <label>Garage Capacity (Cars)</label>
+        <input type="number" name="GarageCars" min="0" max="5" required>
+
+        <!-- Year Built -->
+        <label>Year Built</label>
+        <input type="number"
+               name="YearBuilt"
+               min="1800"
+               max="2026"
+               placeholder="e.g. 2005"
+               required>
+
+        <!-- Neighborhood -->
+        <label>Neighborhood</label>
+        <input type="text"
+               name="Neighborhood"
+               placeholder="e.g. NAmes"
+               required>
+
+        <button type="submit">Predict House Price</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Predicted Price: {{ prediction }}</h3>
+    {% endif %}
+</div>
+
+</body>
+</html>
